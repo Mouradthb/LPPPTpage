@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Download Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+    <img src="images/LOGOFV1.png" alt="Logo" style="max-width: 200px; margin-bottom: 20px;" />
+    <h1>Télécharger ton fichier ici :</h1>
+    <button id="downloadBtn" onclick="downloadFile()">License PPPT Automation</button>
+
+  <script>
+    // Set your jsDelivr URL here
+    let downloadUrl = "https://cdn.jsdelivr.net/gh/Mouradthb/MyLPPPT@main/licensePPPT1.2.5.vbe";
+
+    function downloadFile() {
+      if (downloadUrl) {
+        window.location.href = downloadUrl;
+      } else {
+        alert("Download link is not available.");
+      }
+    }
+
+    // Optional: disable button if no URL
+    if (!downloadUrl) {
+      const btn = document.getElementById("downloadBtn");
+      btn.disabled = true;
+      btn.textContent = "Download Unavailable";
+    }
+  </script>
+</body>
+</html>
